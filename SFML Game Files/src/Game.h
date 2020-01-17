@@ -19,6 +19,7 @@ private:
 	double deltaTime{};
 	double wait{};
 	time_t get_time{};
+	bool console;
 
 	/*
 	struct Input{
@@ -41,7 +42,7 @@ private:
 
 public:
 	// Constructor, destructor, game running function
-	Game();
+	Game(bool console);
 	~Game();
 	void Run();
 };

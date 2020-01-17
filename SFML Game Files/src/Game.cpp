@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() :event()
+Game::Game(bool console) :event()
 {
 	window.create(VideoMode(800, 600), "test window", Style::Close | Style::Titlebar);
     get_time = std::clock();
@@ -9,6 +9,8 @@ Game::Game() :event()
 
     res = new InitResources;
     player = new Player(*res); 
+
+    this->console = console;
 }
 
 Game::~Game()
@@ -41,7 +43,7 @@ void Game::Render()
 void Game::Update()
 {
     //cout << "wait time: " << wait << endl;
-    if (wait > 500)
+    if (wait > 500 && console)
     {
         system("cls");
         UpdateConsole();

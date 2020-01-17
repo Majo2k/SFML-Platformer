@@ -25,6 +25,9 @@
 #include <cstdlib>
 #include <string.h>
 
+#define DEBUG true
+#define RELEASE false
+
 // Sf opened for all sf functions and classes
 using namespace sf;
 
