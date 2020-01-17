@@ -1,29 +1,8 @@
-#include <SFML/Graphics.hpp>
+#include "Game.h"
 
-using namespace sf;
-
-int main()
+int main(int argc, char* argv[])
 {
-	RenderWindow window;
-	window.create(VideoMode(300, 300), "This is test window", Style::Default);
-
-	while (window.isOpen())
-	{
-		window.clear(Color::White);
-		window.display();
-	}
-	return 0;
-}
-
-int WinMain()
-{
-	RenderWindow window;
-	window.create(VideoMode(300, 300), "This is test window", Style::Default);
-
-	while (window.isOpen())
-	{
-		window.clear(Color::White);
-		window.display();
-	}
-	return 0;
+    Game game;
+    game.Run();
+    return EXIT_SUCCESS;
 }
