@@ -1,7 +1,9 @@
 #include "InitResources.h"
 
-InitResources::InitResources() :hWnd()
+InitResources::InitResources(bool console) :hWnd()
 {
+	this->console = console;
+
 	// ERROR Message:  "Couldn't load (wstring)"
 	InitTextures();
 	InitSounds();
@@ -26,19 +28,22 @@ void InitResources::InitFonts()
 
 void InitResources::ThrowExeption(wstring failed_resource)
 {
-	wchar_t buff[100];
+	if (!console)
+	{
+		wchar_t buff[100];
 
-	wstring error_message = L"Couldn't load ";
-	error_message += failed_resource;
-	swprintf_s(buff, 100, L"%s", error_message.c_str());
+		wstring error_message = L"Couldn't load ";
+		error_message += failed_resource;
+		swprintf_s(buff, 100, L"%s", error_message.c_str());
 
-	MessageBox
-	(
-		hWnd,
-		buff,
-		L"ERROR",
-		MB_OK | MB_ICONERROR
-	);
+		MessageBox
+		(
+			hWnd,
+			buff,
+			L"ERROR",
+			MB_OK | MB_ICONERROR
+		);
+	}
 
 	exit(EXIT_FAILURE);
 }

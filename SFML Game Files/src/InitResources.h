@@ -12,13 +12,15 @@ private:
 		defenti = "../res/",
 		defback = "../res/";
 
+	bool console{};
+
 public:
 	Texture player;
 	//Sound testbuff;
 	//Font testfont;
 
 public:
-	InitResources();
+	InitResources(bool console);
 
 private:
 	void InitTextures();

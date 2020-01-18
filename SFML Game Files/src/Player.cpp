@@ -33,20 +33,7 @@ void Player::InitFrames()
 
 Player::~Player()
 {
-	/*
-	
-	--------------------------------
-	Destrucor Poem:
-
-		Roses are red,
-		life has no meaning,
-		voices in my head
-		are constantly screaming.
-	--------------------------------
-
-	picardia.png
-
-	*/
+	/* STUFF */
 }
 
 void Player::HandleInputs(double dt)

@@ -7,7 +7,7 @@ Animation::Animation(sf::Sprite& target) :target(target)
 
 Animation::~Animation()
 {
-    /*OKAYGE COCK*/
+    /* STUFF */
 }
 
 void Animation::AddFrame(Frame&& frame)

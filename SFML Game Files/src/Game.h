@@ -19,7 +19,7 @@ private:
 	double deltaTime{};
 	double wait{};
 	time_t get_time{};
-	bool console;
+	bool console{};
 
 	/*
 	struct Input{

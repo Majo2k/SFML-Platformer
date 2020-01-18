@@ -7,7 +7,7 @@ Game::Game(bool console) :event()
     //timer.restart();
     srand((unsigned)time(NULL));
 
-    res = new InitResources;
+    res = new InitResources(console);
     player = new Player(*res); 
 
     this->console = console;

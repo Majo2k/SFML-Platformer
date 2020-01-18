@@ -14,3 +14,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     game.Run();
     return EXIT_SUCCESS;
 }
+
+/*
+---------------------------------------------
+                  TO DO:
+    1. Put InitResources to all_headers
+    2. Delete IR class form Player class 
+    3. Add jumpinng mechanics
+    4. Fix Animation class (Update func)
+    5. Fix character displaying 
+    6. Fix warnings (?)
+---------------------------------------------
+*/
