@@ -67,11 +67,11 @@ void Player::HandleInputs(double dt)
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
 		if (velocity.y == 0.0f && velocity.y < jump_height)
-			velocity.y = -sqrt(2.0f * gravity * jump_height);
+			velocity.y = -sqrt(2.0f * static_cast<float>(gravity * jump_height));
 	}
 
 	if (velocity.y != 0.0f && velocity.y < 1.0f)
-		velocity.y += gravity * dt;
+		velocity.y += static_cast<float>(gravity * dt);
 	else velocity.y = 0.0f;
 }
 

@@ -15,12 +15,12 @@
 #include <SFML/Window.hpp>
 
 // Standard Libs
+#include <Windows.h>
 #include <iostream>
 #include <cmath>
 #include <thread>
 #include <vector>
 #include <conio.h>
-#include <Windows.h>
 #include <ctime>
 #include <cstdlib>
 #include <string.h>
