@@ -7,9 +7,9 @@ I'm trying to make simple SFML platformer game in C++
 - It is failure and it's most likely not going to be finished ¯\\_ (ツ) _/¯
 
 ## TO DO
-- [X] Fix Animation class (Update func)
-- [X] Fix character displaying 
-- [X] Fix warnings (?)
+- [x] Fix Animation class (Update func)
+- [x] Fix character displaying 
+- [x] Fix warnings (?)
 - [ ] Put InitResources to all_headers
 - [ ] Remove IR class from Player class 
 - [ ] Add jumpinng mechanics
