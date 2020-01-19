@@ -10,7 +10,7 @@ I'm trying to make simple SFML platformer game in C++
 - [x] Fix Animation class (Update func)
 - [x] Fix character displaying 
 - [x] Fix warnings (?)
-- [ ] Put InitResources to all_headers
-- [ ] Remove IR class from Player class 
+- [x] Put InitResources to all_headers
+- [x] Remove IR class from Player class 
 - [ ] Add jumpinng mechanics
-
+- [ ] Add and make collision detection class 

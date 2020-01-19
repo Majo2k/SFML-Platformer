@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Animation.h"
-#include "InitResources.h"
+//#include "InitResources.h"
 
 class Player
 {
@@ -16,13 +16,14 @@ private:
 	Animation dashAnim;
 
 	// Class veriables
-	int height = 114;
-	int width = 124;
+	const int height = 102 + 13;
+	const int width = 72;
 	double display_speed = 0.1;
-	Vector2u player_size;
+	Vector2u player_scale;
+	Vector2f player_pos;
 
 	Vector2f velocity;
-	float movement_speed = 0.3f;
+	float movement_speed = 0.4f;
 	const double jump_time = 0.3;
 	double progress{};
 	const double gravity = 1.1;
@@ -43,6 +44,6 @@ public:
 	Player(InitResources& res);
 	~Player();
 	void Render(RenderWindow& window, double dt);
-
+	void UpdateConsole();
 };
 

@@ -5,7 +5,11 @@ Player::Player(InitResources& res)
 {
 	// Setting the player
 	player.setTexture(res.player);
-	player.setPosition(300, 200);
+
+	player_pos.x = 300.0f;
+	player_pos.y = 200.0f;
+
+	player.setPosition(player_pos);
 
 	velocity.x = 0.0;
 	velocity.y = 0.0;
@@ -15,15 +19,15 @@ Player::Player(InitResources& res)
 
 void Player::InitFrames()
 {
-		// Adding standing animation frames
-	standAnim.AddFrame({IntRect(0, 0, 84, 115), display_speed});
+		// Adding standing animation frame
+	standAnim.AddFrame({IntRect(0, 0, 84, height), display_speed});
 
 		// Adding walking animation frames
 	for (int i = 0; i <= 360; i += 72)
 	{
 		// Changing 2nd frame cuz animator is retarded
-		if (i == 0) walkAnim.AddFrame({ IntRect(i + 90 - 6, 0, 72+6, 115), display_speed });
-		else walkAnim.AddFrame({ IntRect(i + 90, 0, 72, 115), display_speed });
+		if (i == 0) walkAnim.AddFrame({ IntRect(i + 90 - 6, 0, width + 6, height), display_speed });
+		else walkAnim.AddFrame({ IntRect(i + 90, 0, width, height), display_speed });
 	}
 
 		// Adding jumping animation frames
@@ -88,6 +92,7 @@ void Player::DisplayAnimations(double dt)
 	else if (velocity.x != 0.0f && velocity.y == 0.0f) walkAnim.Update(dt, true);
 }
 
+
 void Player::Render(RenderWindow& window, double dt)
 {
 	//if (PlayerIsWalking(dt)) walkAnim.Update(dt, true);
@@ -97,5 +102,13 @@ void Player::Render(RenderWindow& window, double dt)
 	DisplayAnimations(dt);
 
 	player.move(velocity.x, velocity.y);
+	player_pos += velocity;
 	window.draw(player);
+}
+
+
+void Player::UpdateConsole()
+{
+	cout << "Player position x: " << player_pos.x << endl;
+	cout << "Player position y: " << player_pos.y << endl;
 }

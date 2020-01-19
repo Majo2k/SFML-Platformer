@@ -21,14 +21,12 @@ private:
 	time_t get_time{};
 	bool console{};
 
-	/*
 	struct Input{
 		bool left{};
 		bool right{};
 		bool jump{};
 		bool dash{};
 	}inp;
-	*/
 
 private:
 	// Main program functions
@@ -39,6 +37,7 @@ private:
 	void UpdateEvents();
 	void UpdateConsole();
 	void UpdateTimers();
+	void UpdateInputs();
 
 public:
 	// Constructor, destructor, game running function

@@ -1,8 +1,5 @@
 #pragma once
 
-// Program resources
-//#include "InitResources.h"
-
 // SFML Libs
 #include <SFML/Audio.hpp>
 #include <SFML/Config.hpp>
@@ -41,5 +38,6 @@ using std::wstring;
 using std::srand;
 using std::rand;
 
-
+// Program resources
+#include "InitResources.h"
 

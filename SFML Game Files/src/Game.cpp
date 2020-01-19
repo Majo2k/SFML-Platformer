@@ -51,6 +51,7 @@ void Game::Update()
     }
     UpdateEvents();
     UpdateTimers();
+    UpdateInputs();
 }
 
 void Game::UpdateEvents()
@@ -66,7 +67,10 @@ void Game::UpdateEvents()
         case Event::KeyPressed:
             if (Keyboard::isKeyPressed(Keyboard::Escape))
                 window.close();
+
             break;
+
+        case Event::KeyReleased:
 
         default:
             break;
@@ -74,10 +78,34 @@ void Game::UpdateEvents()
     }
 }
 
+void Game::UpdateInputs()
+{
+    if (Keyboard::isKeyPressed(Keyboard::A)) inp.left = true;
+    else inp.left = false;
+
+    if (Keyboard::isKeyPressed(Keyboard::D)) inp.right = true;
+    else inp.right = false;
+
+    if (Keyboard::isKeyPressed(Keyboard::Space)) inp.jump = true;
+    else inp.jump = false;
+}
+
 void Game::UpdateConsole()
 {
 	cout << "Render time: " << deltaTime  << " seconds" << endl;
     cout << endl;
+    player->UpdateConsole();
+
+    cout << endl;
+
+    if (inp.right) cout << "Right key is pressed\n";
+    else cout << "Right key is NOT pressed\n";
+
+    if (inp.left) cout << "Left key is pressed\n";
+    else cout << "Left key is NOT pressed\n";
+
+    if (inp.jump) cout << "Jump key is pressed\n";
+    else cout << "Jump key is NOT pressed\n";
 }
 
 void Game::UpdateTimers()
