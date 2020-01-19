@@ -18,11 +18,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE
 /*
 ---------------------------------------------
                   TO DO:
-    1. Put InitResources to all_headers
-    2. Delete IR class form Player class 
-    3. Add jumpinng mechanics
-    4. Fix Animation class (Update func)
-    5. Fix character displaying 
-    6. Fix warnings (?)
+    [] Put InitResources to all_headers
+    [] Delete IR class form Player class 
+    [] Add jumpinng mechanics
+    [x] Fix Animation class (Update func)
+    [x] Fix character displaying 
+    [x] Fix warnings (?)
 ---------------------------------------------
 */

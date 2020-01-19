@@ -16,11 +16,15 @@ Player::Player(InitResources& res)
 void Player::InitFrames()
 {
 		// Adding standing animation frames
-	standAnim.AddFrame({IntRect(0, 0, 84, 108), display_speed});
+	standAnim.AddFrame({IntRect(0, 0, 84, 115), display_speed});
 
 		// Adding walking animation frames
-	for (int i = 0; i <= 5; i++)
-		walkAnim.AddFrame({ IntRect(72 * i + 90, 0, 72, 108), display_speed });
+	for (int i = 0; i <= 360; i += 72)
+	{
+		// Changing 2nd frame cuz animator is retarded
+		if (i == 0) walkAnim.AddFrame({ IntRect(i + 90 - 6, 0, 72+6, 115), display_speed });
+		else walkAnim.AddFrame({ IntRect(i + 90, 0, 72, 115), display_speed });
+	}
 
 		// Adding jumping animation frames
 	for (int i = 0; i <= NULL; i++)
@@ -47,7 +51,7 @@ void Player::HandleInputs(double dt)
 			player.setScale(1.0f, 1.0f);
 			player.move(-90.0f, 0.0f);
 		}
-		else velocity.x += 0.3f;
+		else velocity.x += movement_speed;
 
 		faceRight = true;
 	}
@@ -59,19 +63,22 @@ void Player::HandleInputs(double dt)
 			player.setScale(-1.0f, 1.0f);
 			player.move(90.0f, 0.0f);
 		}
-		else velocity.x -= 0.3f;
+		else velocity.x -= movement_speed;
 
 		faceRight = false;
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
-		if (velocity.y == 0.0f && velocity.y < jump_height)
-			velocity.y = -sqrt(2.0f * static_cast<float>(gravity * jump_height));
+		if (velocity.y == 0.0f && can_jump)
+			velocity.y = -movement_speed;
 	}
 
-	if (velocity.y != 0.0f && velocity.y < 1.0f)
-		velocity.y += static_cast<float>(gravity * dt);
+	if (!can_jump)
+	{
+		if (progress < jump_time) progress += dt;
+		else velocity.y += static_cast<float>(gravity * dt);
+	}
 	else velocity.y = 0.0f;
 }
 

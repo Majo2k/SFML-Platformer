@@ -22,9 +22,10 @@ private:
 	Vector2u player_size;
 
 	Vector2f velocity;
-	double movement_speed = 0.3;
-	double jump_height = 2.0;
-	const double gravity = 1.0;
+	float movement_speed = 0.3f;
+	const double jump_time = 0.3;
+	double progress{};
+	const double gravity = 1.1;
 	bool faceRight = true;
 	bool can_jump = true;
 
