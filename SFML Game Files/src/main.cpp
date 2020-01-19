@@ -14,15 +14,3 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE
     game.Run();
     return EXIT_SUCCESS;
 }
-
-/*
----------------------------------------------
-                  TO DO:
-    [] Put InitResources to all_headers
-    [] Delete IR class form Player class 
-    [] Add jumpinng mechanics
-    [x] Fix Animation class (Update func)
-    [x] Fix character displaying 
-    [x] Fix warnings (?)
----------------------------------------------
-*/
