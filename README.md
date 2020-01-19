@@ -5,3 +5,12 @@ I'm trying to make simple SFML platformer game in C++
 - Works only on 64 bit version
 - All sfml libs are linked statically
 - It is failure and it's most likely not going to be finished ¯\\_ (ツ) _/¯
+
+## TO DO:
+- [x] Fix Animation class (Update func)
+- [x] Fix character displaying 
+- [x] Fix warnings (?)
+- [ ] Put InitResources to all_headers
+- [ ] Delete IR class from Player class 
+- [ ] Add jumpinng mechanics
+
